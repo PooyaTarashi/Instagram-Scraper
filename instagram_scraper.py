@@ -33,5 +33,6 @@ print('*******************************', usr_psts.text, '***********************
 usr_photo = browser.find_element(By.XPATH, '/html/body/div[2]/div/div/div[2]/div/div/div/div[1]/div[1]/div[2]/div[2]/section/main/div/header/div/div/span/img')
 print('*******************************', usr_photo.get_attribute('src'), '*****************************')
 
-
-sleep(200)
+with open('accounts.txt', 'a') as f:
+    f.write('username: {0}\naccount name: {1}no. of followers: {2}no. of followings: {3}bio: {4}\nno. of posts: {5}\nphoto address: {6}'.format(usr_id[0].text, usr_name.text, usr_flwrs.text, usr_flwngs, usr_bio.text, usr_psts.text, usr_photo.get_attribute('src')))
+    f.write('\n______________________________________________\n\n\n')
